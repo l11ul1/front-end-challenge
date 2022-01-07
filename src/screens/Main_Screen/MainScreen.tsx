@@ -1,11 +1,13 @@
 import "./Styles/main-screen-styles.css";
+import React from "react";
+import NavigationBar from "./Components/NavigtionBarComponent";
 
-function MainScreen() {
+const MainScreen: React.FC = () => {
 	return (
 		<div className="App">
-			<h2 className="hello">blue</h2>
+			<NavigationBar />
 		</div>
 	);
-}
+};
 
 export default MainScreen;

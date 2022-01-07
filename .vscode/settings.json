@@ -1,0 +1,11 @@
+{
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "svipas.prettier-plus",
+	"prettier.requireConfig": true,
+	"editor.fontSize": 15,
+	"prettier.tabWidth": 4,
+	"editor.detectIndentation": false,
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "svipas.prettier-plus"
+	}
+}

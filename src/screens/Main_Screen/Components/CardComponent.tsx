@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMeteor } from "@fortawesome/free-solid-svg-icons";
+import { faMeteor, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
 const CardComponent: React.FC = () => {
 	return (
@@ -14,6 +14,10 @@ const CardComponent: React.FC = () => {
 				<p className="card-date">Date: 01.02.2022</p>
 				<button className="btn-like">
 					<FontAwesomeIcon icon={faMeteor} />
+				</button>
+				<button className="btn-info">
+					<FontAwesomeIcon icon={faInfoCircle} />
+					More
 				</button>
 			</div>
 		</div>

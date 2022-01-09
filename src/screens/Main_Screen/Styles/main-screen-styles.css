@@ -11,6 +11,14 @@ h2 {
 	font-weight: 500;
 }
 
+button {
+	background-color: white;
+	border-radius: 5px;
+	padding: 5px 10px;
+	outline: 0;
+	border-width: 0;
+}
+
 /* end of general styles */
 
 /* navigation bar styles */
@@ -96,6 +104,13 @@ h2 {
 	border-radius: 20px;
 }
 
+@media (max-width: 1600px) {
+	h2 {
+		font-weight: 100;
+		font-size: 22px;
+	}
+}
+
 @media (max-width: 1530px) {
 	.card {
 		max-width: 80%;
@@ -108,8 +123,8 @@ h2 {
 		transform: scale(0.8);
 	}
 	h2 {
-		font-weight: bold;
-		font-size: 3.5vw;
+		font-weight: 100;
+		font-size: 4vw;
 	}
 }
 
@@ -125,21 +140,21 @@ h2 {
 }
 
 .btn-like {
-	background-color: white;
-	border-radius: 5px;
-	padding: 5px 10px;
-	outline: 0;
-	border-width: 0;
 	font-size: 14px;
 }
 
+.btn-like:hover {
+	background-color: #343434;
+	color: white;
+}
+
 .btn-info {
-	background-color: white;
-	border-radius: 5px;
-	padding: 5px 10px;
-	outline: 0;
-	border-width: 0;
 	margin-left: 0.5rem;
+}
+
+.btn-info:hover {
+	background-color: #343434;
+	color: white;
 }
 
 svg.fa-info-circle {

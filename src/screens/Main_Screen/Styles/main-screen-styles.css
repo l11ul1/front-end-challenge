@@ -17,6 +17,7 @@ button {
 	padding: 5px 10px;
 	outline: 0;
 	border-width: 0;
+	cursor: pointer;
 }
 
 /* end of general styles */
@@ -85,8 +86,8 @@ button {
 	border: none;
 	height: 17px;
 	padding-left: 5px;
-	/*border-radius: 15px;*/
 }
+
 /* end navigation bar styles */
 
 /* Body styles */
@@ -102,30 +103,6 @@ button {
 	padding: 8rem 0 0;
 	max-width: 80%;
 	border-radius: 20px;
-}
-
-@media (max-width: 1600px) {
-	h2 {
-		font-weight: 100;
-		font-size: 22px;
-	}
-}
-
-@media (max-width: 1530px) {
-	.card {
-		max-width: 80%;
-	}
-}
-
-@media (max-width: 515px) {
-	.card {
-		max-width: 100%;
-		transform: scale(0.8);
-	}
-	h2 {
-		font-weight: 100;
-		font-size: 4vw;
-	}
 }
 
 .card-content {
@@ -211,4 +188,62 @@ button.rec-dot:focus {
 	background-color: white;
 	box-shadow: 0 0 1px 3px #9c9c9c;
 }
+
 /* End of body styles */
+
+/* All Responsiveness Goes Here */
+@media (max-width: 1600px) {
+	h2 {
+		font-weight: 100;
+		font-size: 22px;
+	}
+}
+
+@media (max-width: 1530px) {
+	.card {
+		max-width: 80%;
+	}
+}
+
+@media (max-width: 660px) {
+	.nav-bar {
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.nav-bar > ul > li {
+		text-align: center;
+		float: none;
+		display: block;
+		padding: 5px;
+	}
+
+	.react-datepicker__input-container {
+		width: 100%;
+		display: flex !important;
+		justify-content: space-around;
+		padding: 10px;
+	}
+}
+
+@media (max-width: 515px) {
+	.card {
+		max-width: 100%;
+		transform: scale(0.8);
+	}
+	.card:hover {
+		max-width: 100%;
+		transform: scale(0.9);
+		transition: transform 0.6s;
+	}
+	h2 {
+		font-weight: 100;
+		font-size: 4vw;
+	}
+	.rec-dot {
+		transform: scale(0.8);
+		margin: 3px !important;
+	}
+}
+
+/* End of the Responsiveness Block */

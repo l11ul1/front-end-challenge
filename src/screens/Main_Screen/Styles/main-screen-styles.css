@@ -9,6 +9,11 @@ h2 {
 	margin: 0;
 	font-family: "Montserrat Alternates", sans-serif;
 	font-weight: 500;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
 }
 
 button {
@@ -98,7 +103,7 @@ button {
 
 .card {
 	color: white;
-	background-image: url("../../../assets/testing_image.jpg");
+	background-image: url("../../../assets/placeholder.PNG");
 	background-size: cover;
 	padding: 8rem 0 0;
 	max-width: 80%;
@@ -180,6 +185,10 @@ p.card-date {
 button.rec-dot {
 	background-color: white;
 	box-shadow: 0 0 1px 3px #646463;
+}
+
+button.rec-dot.disabled-dots {
+	display: none !important;
 }
 
 button.rec-dot:hover,

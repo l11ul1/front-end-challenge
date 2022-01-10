@@ -1,17 +1,20 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMeteor, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import Card from "../Types/Card";
 
-const CardComponent: React.FC = () => {
+const CardComponent: React.FC<Card> = ({
+	cardTitle,
+	cardDescription,
+	cardDate,
+	cardImage,
+}) => {
 	return (
-		<div className="card">
+		<div className="card" style={{ backgroundImage: `url(${cardImage})` }}>
 			<div className="card-content">
-				<h2 className="card-title">Name of the card</h2>
-				<p className="card-body">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Voluptates fuga maiores laboriosam quia quae?
-				</p>
-				<p className="card-date">Date: 01.02.2022</p>
+				<h2 className="card-title">{cardTitle}</h2>
+				<p className="card-body">{cardDescription}</p>
+				<p className="card-date">{cardDate}</p>
 				<button className="btn-like">
 					<FontAwesomeIcon icon={faMeteor} />
 				</button>

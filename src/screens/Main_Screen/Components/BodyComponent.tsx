@@ -36,17 +36,16 @@ const BodyComponent: React.FC = () => {
 
 	// Function to fetch the images from the API
 	const getImages = () => {
-		// let config = {
-		// 	headers: {
-		// 		"Access-Control-Allow-Origin": "*",
-		// 		"Access-Control-Allow-Methods":
-		// 			"GET,PUT,POST,DELETE,PATCH,OPTIONS",
-		// 	},
-		// };
+		let config = {
+			headers: {
+				"Access-Control-Allow-Origin": "*",
+			},
+		};
 
 		axios
 			.get(
-				"https://api.nasa.gov/planetary/apod?api_key=9fEd6kIexQo0OIrav2kiuhiCnGTdGotY0lugdN5d&count=10"
+				"https://api.nasa.gov/planetary/apod?api_key=9fEd6kIexQo0OIrav2kiuhiCnGTdGotY0lugdN5d&count=10",
+				config
 			)
 			.then((response) => {
 				let temp: Card[] = [];
@@ -83,6 +82,7 @@ const BodyComponent: React.FC = () => {
 	if (width <= 870) {
 		itemsToShow = 1;
 	}
+
 	if (loaded === true) {
 		return (
 			<section className="main-page-body">

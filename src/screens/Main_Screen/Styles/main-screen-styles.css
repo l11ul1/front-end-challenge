@@ -1,13 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 /* general styles */
 body {
 	margin: 0;
 	padding: 0;
-	font-family: "Montserrat Alternates", sans-serif;
+	font-family: "Montserrat", sans-serif;
 }
 
 h2 {
 	margin: 0;
-	font-family: "Montserrat Alternates", sans-serif;
+	font-family: "Montserrat", sans-serif;
 	font-weight: 500;
 	-webkit-line-clamp: 1;
 	overflow: hidden;
@@ -187,8 +189,8 @@ button.rec-dot {
 	box-shadow: 0 0 1px 3px #646463;
 }
 
-button.rec-dot.disabled-dots {
-	display: none !important;
+.disabled-dots .rec-pagination {
+	display: none;
 }
 
 button.rec-dot:hover,
@@ -201,54 +203,8 @@ button.rec-dot:focus {
 /* End of body styles */
 
 /* Modal Styles */
-
-.modal-information {
-	background: linear-gradient(
-		hsl(0 0% 0% / 1),
-		rgba(0, 0, 0, 0.3) 10%,
-		hsl(0 0% 0% / 0)
-	);
-	color: white;
-	border-radius: 20px 20px 0 0;
-	padding: 40px;
-	display: flex;
-	flex-direction: column;
-	/* justify-content: center; */
-	/* width: 50%; */
-	height: 80%;
-}
-
-.modal-information p {
-	overflow-y: scroll;
-	-ms-overflow-style: none; /* for Internet Explorer, Edge */
-	scrollbar-width: none;
-}
-
-::-webkit-scrollbar {
-	width: 1px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-	background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-	background: #888;
-}
-
-.modal-filter {
-	width: 100%;
-	height: 100%;
-}
-
-.modal-information::-webkit-scrollbar {
-	display: none; /* for Chrome, Safari, and Opera */
-}
-
 .modal-container {
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.7);
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -257,29 +213,40 @@ button.rec-dot:focus {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	visibility: visible;
+	opacity: 1;
+	transition-duration: 0.8s;
+	transition-property: opacity, visibility;
 }
 
-.modal {
-	background-size: cover;
-	border-radius: 20px;
+.modal-container > .card {
 	margin-left: auto;
 	margin-right: auto;
-	background-color: white;
-	width: 50%;
-	height: 50%;
-	display: flex;
+	max-width: 45%;
+}
+
+.modal-container,
+.hidden {
+	visibility: hidden;
+	opacity: 0;
+	transition-duration: 0.8s;
+	transition-property: opacity, visibility;
 }
 /* End of Modal Styles */
 
 /* All Responsiveness Goes Here */
 @media (max-width: 1600px) {
 	h2 {
-		font-weight: 100;
+		font-weight: 400;
 		font-size: 22px;
 	}
 }
 
 @media (max-width: 1530px) {
+	.modal-container > .card {
+		max-width: 80%;
+	}
+
 	.card {
 		max-width: 80%;
 	}
@@ -307,6 +274,10 @@ button.rec-dot:focus {
 }
 
 @media (max-width: 515px) {
+	.modal-container > .card {
+		max-width: 100%;
+	}
+
 	.card {
 		max-width: 100%;
 		transform: scale(0.8);
@@ -317,8 +288,8 @@ button.rec-dot:focus {
 		transition: transform 0.6s;
 	}
 	h2 {
-		font-weight: 100;
-		font-size: 4vw;
+		font-weight: 700;
+		font-size: 4.1vw;
 	}
 	.rec-dot {
 		transform: scale(0.8);

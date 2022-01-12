@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react";
 import Carousel from "react-elastic-carousel";
 import CardComponent from "./CardComponent";
 import Card from "../Types/Card";
-import { css } from "@emotion/react";
 import BeatLoader from "react-spinners/BeatLoader";
+import ModalComponent from "./ModalComponent";
+import { ModalContextProvider } from "../../../helpers/ModalContext";
 
 // Custom hook to get the size of the window
 const useWindowSize = () => {
@@ -31,17 +32,21 @@ const BodyComponent: React.FC = () => {
 	const [, width]: number[] = useWindowSize();
 	const [images, setImages] = useState<Card[]>([]);
 	const [loaded, setLoaded] = useState<Boolean>(false);
+	const [isError, setIsError] = useState<Boolean>(false);
 
 	// Function to fetch the images from the API
 	const getImages = () => {
-		let config = {
-			headers: { "Access-Control-Allow-Origin": "*" },
-		};
+		// let config = {
+		// 	headers: {
+		// 		"Access-Control-Allow-Origin": "*",
+		// 		"Access-Control-Allow-Methods":
+		// 			"GET,PUT,POST,DELETE,PATCH,OPTIONS",
+		// 	},
+		// };
 
 		axios
 			.get(
-				"https://api.nasa.gov/planetary/apod?api_key=9fEd6kIexQo0OIrav2kiuhiCnGTdGotY0lugdN5d&count=10",
-				config
+				"https://api.nasa.gov/planetary/apod?api_key=9fEd6kIexQo0OIrav2kiuhiCnGTdGotY0lugdN5d&count=10"
 			)
 			.then((response) => {
 				let temp: Card[] = [];
@@ -59,6 +64,8 @@ const BodyComponent: React.FC = () => {
 			})
 			.catch((e) => {
 				console.log(e);
+				setLoaded(false);
+				setIsError(true);
 			});
 	};
 
@@ -79,17 +86,20 @@ const BodyComponent: React.FC = () => {
 	if (loaded === true) {
 		return (
 			<section className="main-page-body">
-				<Carousel isRTL={false} itemsToShow={itemsToShow}>
-					{images.map((img, i) => (
-						<CardComponent
-							key={i}
-							cardImage={img.cardImage}
-							cardDate={img.cardDate}
-							cardDescription={img.cardDescription}
-							cardTitle={img.cardTitle}
-						/>
-					))}
-				</Carousel>
+				<ModalContextProvider>
+					<Carousel isRTL={false} itemsToShow={itemsToShow}>
+						{images.map((img, i) => (
+							<CardComponent
+								key={i}
+								cardImage={img.cardImage}
+								cardDate={img.cardDate}
+								cardDescription={img.cardDescription}
+								cardTitle={img.cardTitle}
+							/>
+						))}
+					</Carousel>
+					<ModalComponent></ModalComponent>
+				</ModalContextProvider>
 			</section>
 		);
 	} else {
@@ -97,7 +107,7 @@ const BodyComponent: React.FC = () => {
 			<section className="main-page-body disabled-dots">
 				<Carousel isRTL={false} itemsToShow={itemsToShow}>
 					<div className="card" style={{ backgroundImage: "none" }}>
-						<BeatLoader color="#424242" size={90} />
+						<BeatLoader color="#424242" size={30} />
 					</div>
 				</Carousel>
 			</section>

@@ -203,7 +203,8 @@ button.rec-dot:focus {
 /* End of body styles */
 
 /* Modal Styles */
-.modal-container {
+.modal-container,
+.shown {
 	background-color: rgba(0, 0, 0, 0.7);
 	position: fixed;
 	left: 0;
@@ -213,10 +214,13 @@ button.rec-dot:focus {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	visibility: visible;
-	opacity: 1;
-	transition-duration: 0.8s;
-	transition-property: opacity, visibility;
+}
+
+.shown {
+	visibility: visible !important;
+	opacity: 1 !important;
+	transition-duration: 0.8s !important;
+	transition-property: opacity, visibility !important;
 }
 
 .modal-container > .card {

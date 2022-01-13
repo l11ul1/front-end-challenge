@@ -8,12 +8,9 @@ const ModalComponent: React.FC = () => {
 	if (context.isShown) {
 		return (
 			<div
-				className="modal-container"
-				style={{
-					visibility: "visible",
-					opacity: "1",
-					transitionDuration: "0.8s",
-					transitionProperty: "visibility, opacity",
+				className="modal-container shown"
+				onMouseDown={() => {
+					context.setIsShown(false);
 				}}
 			>
 				<div
@@ -26,7 +23,7 @@ const ModalComponent: React.FC = () => {
 						<h2>{context.card.cardTitle}</h2>
 						<p>{context.card.cardDescription}</p>
 						<button
-							className="closeBtn"
+							className="btn-close"
 							onClick={() => {
 								context.setIsShown(false);
 							}}

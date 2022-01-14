@@ -36,17 +36,17 @@ const BodyComponent: React.FC = () => {
 
 	// Function to fetch the images from the API
 	const getImages = () => {
-		let config = {
-			headers: {
-				"Access-Control-Allow-Origin": "*",
-			},
-		};
-
 		axios
-			.get(
-				"https://api.nasa.gov/planetary/apod?api_key=9fEd6kIexQo0OIrav2kiuhiCnGTdGotY0lugdN5d&count=10",
-				config
-			)
+			.get("https://api.nasa.gov/planetary/apod", {
+				params: {
+					count: 10,
+					thumbs: "false",
+					api_key: "9fEd6kIexQo0OIrav2kiuhiCnGTdGotY0lugdN5d",
+				},
+				headers: {
+					"Access-Control-Allow-Origin": "*",
+				},
+			})
 			.then((response) => {
 				let temp: Card[] = [];
 				response.data.forEach((i: any) => {

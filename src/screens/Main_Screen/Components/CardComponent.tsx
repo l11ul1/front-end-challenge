@@ -15,6 +15,27 @@ const CardComponent: React.FC<Card> = ({
 	const [isLiked, setIsLiked] = useState<boolean>(false);
 	const context = useContext(ModalContext);
 
+	// Function to call the toast
+	const callToast = () => {
+		if (!isLiked) {
+			toast("🚀 Liked!", {
+				theme: "dark",
+				position: "bottom-center",
+				autoClose: 1500,
+				hideProgressBar: true,
+				closeOnClick: true,
+			});
+		} else {
+			toast("💔 Disliked!", {
+				theme: "dark",
+				position: "bottom-center",
+				autoClose: 1500,
+				hideProgressBar: true,
+				closeOnClick: true,
+			});
+		}
+	};
+
 	return (
 		<>
 			<div
@@ -29,23 +50,7 @@ const CardComponent: React.FC<Card> = ({
 						className={isLiked ? "liked" : "btn-like"}
 						onClick={() => {
 							setIsLiked(!isLiked);
-							if (!isLiked) {
-								toast("🚀 Liked!", {
-									theme: "dark",
-									position: "bottom-center",
-									autoClose: 1500,
-									hideProgressBar: true,
-									closeOnClick: true,
-								});
-							} else {
-								toast("💔 Disliked!", {
-									theme: "dark",
-									position: "bottom-center",
-									autoClose: 1500,
-									hideProgressBar: true,
-									closeOnClick: true,
-								});
-							}
+							callToast();
 						}}
 					>
 						<FontAwesomeIcon icon={faMeteor} />

@@ -9,21 +9,25 @@ const NavigationBar: React.FC = () => {
 		<header>
 			<nav className="nav-bar">
 				<ul>
-					<NavLinkComponent isLogo={true} link="" title="" />
 					<NavLinkComponent
-						link="http://localhost:3000/#"
+						isLogo={true}
+						link="https://shopify-challenge-front-end.herokuapp.com/"
+						title=""
+					/>
+					<NavLinkComponent
+						link="https://shopify-challenge-front-end.herokuapp.com/"
 						title="Option One"
 					/>
 					<NavLinkComponent
-						link="http://localhost:3000/#"
+						link="https://shopify-challenge-front-end.herokuapp.com/"
 						title="Option Two"
 					/>
 					<NavLinkComponent
-						link="http://localhost:3000/#"
+						link="https://shopify-challenge-front-end.herokuapp.com/"
 						title="Option Three"
 					/>
 					<NavLinkComponent
-						link="http://localhost:3000/#"
+						link="https://shopify-challenge-front-end.herokuapp.com/"
 						title="Option Four"
 					/>
 				</ul>

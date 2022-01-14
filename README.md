@@ -1,9 +1,20 @@
 # Shopify Challenge Project:
 
-The project is a showcase of the skills learned during my program and previos co-op terms for the front-end development position in Shopify.
-For this project I used react with a typescript. State management is handled by the React Context API.
-Most of the components have been implemented using pure html and css to showcase the deep knowledge of html and css usage.
-But could be implemented thruogh the different components libraries such.
+The project is a showcase of the skills learned during my program and previos co-op terms for the front-end development position at Shopify.
+For this project I used react with Typescript. State management is handled by the React Context API but could have been done with Redux as well.
+Most of the components have been implemented using pure html and css to showcase the deep knowledge and understanding of core web development tools,
+but could be implemented thruogh the different components libraries such as Bootstrap.
+
+## Application Compatability:
+
+Application has been tested for the full compatabity for the Google Chrome and Microsoft Edge.
+
+## Side components used: 
+
+* react-tostify: provide a nice toast message
+* fontawesome: provide components for the icons 
+* react-elastic-carousel: carousel component
+* react-spinners: provide a spinner component
 
 ## Available Scripts:
 
@@ -25,8 +36,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## Application Compatability:
-
-Application has been tested for the full compatabity for the Google Chrome and Microsoft Edge.

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMeteor, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import Card from "../Types/Card";
@@ -10,14 +10,21 @@ const CardComponent: React.FC<Card> = ({
 	cardDate,
 	cardImage,
 }) => {
+	const [isLiked, setIsLiked] = useState<boolean>(false);
 	const context = useContext(ModalContext);
+
 	return (
 		<div className="card" style={{ backgroundImage: `url(${cardImage})` }}>
 			<div className="card-content">
 				<h2 className="card-title">{cardTitle}</h2>
 				<p className="card-body">{cardDescription}</p>
 				<p className="card-date">{cardDate}</p>
-				<button className="btn-like">
+				<button
+					className={isLiked ? "liked" : "btn-like"}
+					onClick={() => {
+						setIsLiked(!isLiked);
+					}}
+				>
 					<FontAwesomeIcon icon={faMeteor} />
 				</button>
 				<button

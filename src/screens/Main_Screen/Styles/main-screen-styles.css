@@ -27,6 +27,11 @@ button {
 	cursor: pointer;
 }
 
+button:hover {
+	background-color: #343434;
+	color: white;
+}
+
 /* end of general styles */
 
 /* navigation bar styles */
@@ -128,17 +133,23 @@ button {
 }
 
 .btn-like:hover {
+	color: orange;
 	background-color: #343434;
-	color: white;
+}
+
+.liked {
+	background-color: #242424;
+	color: red;
+	border-color: "white";
+	font-size: 14px;
+}
+
+.liked:hover {
+	color: red;
 }
 
 .btn-info {
 	margin-left: 0.5rem;
-}
-
-.btn-info:hover {
-	background-color: #343434;
-	color: white;
 }
 
 svg.fa-info-circle {
